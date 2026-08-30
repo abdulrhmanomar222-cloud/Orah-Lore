@@ -1,12 +1,1 @@
-# Orah-Lore  - Requirements
-# No external dependencies required for base game
-# Pure Python implementation using standard library only
-
-# Python >= 3.7 required
-
-# Optional dependencies for future features:
-# pygame>=2.1.0          # For graphics and game loop
-# numpy>=1.21.0         # For advanced calculations
-# sqlalchemy>=1.4.0     # For database ORM (alternative to JSON)
-# requests>=2.27.0      # For multiplayer features
-# pydantic>=1.8.0       # For data validation
+Flask==3.0.0
