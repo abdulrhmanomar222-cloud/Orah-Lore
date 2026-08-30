@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.env
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+*.log
+coverage.xml
+htmlcov/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project data
+/data/*.json
+/data/*.db
