@@ -1,29 +1,36 @@
+"""
 Orah-Lore - Realistic Life Simulation & Roleplay Game
-Main Entry Point
-
-لعبة الحياة الواقعية - محاكي حياة واقعي وتقمص أدوار
+Vercel Serverless Web Entry Point
 """
 
-import sys
 import os
+import sys
 
-# Add current directory to path
+# إضافة المسار الحالي
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from ui import run_game
+from flask import Flask, jsonify
+
+app = Flask(__name__)
 
 
-def main():
-    """Main entry point"""
+@app.route("/")
+def index():
     try:
-        run_game()
-    except KeyboardInterrupt:
-        print("\n\n⚠️  تم إيقاف البرنامج بواسطة المستخدم.")
-        sys.exit(0)
+        # هنا يتم استدعاء منطق اللعبة
+        return jsonify(
+            {
+                "status": "success",
+                "message": "Orah-Lore Game Server is Running!",
+                "game": "لعبة الحياة الواقعية - محاكي حياة واقعي وتقمص أدوار",
+            }
+        )
     except Exception as e:
-        print(f"\n❌ حدث خطأ: {e}")
-        sys.exit(1)
+        return jsonify({"status": "error", "message": str(e)}), 500
 
+
+# هذا المتغير هو ما يبحث عنه Vercel لتشغيل التطبيق
+app = app
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)
